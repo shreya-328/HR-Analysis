@@ -1,0 +1,48 @@
+-- HR Analytics DAX Measures
+-- All measures used to create the current dashboard snapshot
+
+-- 1️⃣ Total Employees
+Total Employees = COUNTROWS(HRData)
+
+-- 2️⃣ Employees Leaving / Attrition Count
+Employees Leaving = CALCULATE(
+    COUNTROWS(HRData),
+    HRData[Attrition] = 1
+)
+
+-- 3️⃣ Employees Staying
+Employees Staying = CALCULATE(
+    COUNTROWS(HRData),
+    HRData[Attrition] = 0
+)
+-- Checks how many employees left vs still employed.
+
+-- 4️⃣ Distinct Departments (if you have a Department column)
+Distinct Departments = DISTINCTCOUNT(HRData[Department])
+-- Tells you how many unique departments are in the dataset.
+
+-- 5️⃣ Average Age (or other numeric columns)
+Average Age = AVERAGE(HRData[Age])
+-- You can replace Age with Salary, Tenure, or any numeric column to see averages.
+
+-- 6️⃣ Maximum & Minimum Values
+Max Age = MAX(HRData[Age])
+Min Age = MIN(HRData[Age])
+-- Quickly detects outliers or data entry issues.
+
+-- 7️⃣ Count of Missing or Blank Values
+Blank Attrition Count = CALCULATE(
+    COUNTROWS(HRData),
+    ISBLANK(HRData[Attrition])
+)
+-- Useful to see if there are any missing Attrition entries.
+
+-- 8️⃣ Attrition Rate by Department (segmented check)
+Attrition Rate by Dept = DIVIDE(
+    CALCULATE(COUNTROWS(HRData), HRData[Attrition] = 1),
+    CALCULATE(COUNTROWS(HRData))
+)
+-- Put Department on rows in a table visual to see attrition rates per department.
+
+-- 9️⃣ Quick Filter Check
+Rows Currently Visible = COUNTROWS(ALLSELECTED(HRData))
