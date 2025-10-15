@@ -1,9 +1,10 @@
 # HR Analytics: Employee Attrition & Performance
 
 ## 🔍 Project Overview
-This project uses the **HR Analytics: Employee Attrition & Performance** dataset from Kaggle to explore, model, and report on factors that lead to employee attrition, understand employee performance patterns, and provide actionable insights for workforce retention and HR decision-making.
--- ** (https://www.kaggle.com/datasets/mahmoudemadabdallah/hr-analytics-employee-attrition-and-performance)
----
+
+This project uses the HR Analytics: Employee Attrition & Performance dataset from Kaggle to explore, model, and report on factors that lead to employee attrition, understand employee performance patterns, and provide actionable insights for workforce retention and HR decision-making.
+(https://www.kaggle.com/datasets/mahmoudemadabdallah/hr-analytics-employee-attrition-and-performance)
+
 
 ## 📚 Dataset Details
 - **Dataset name:** IBM HR Analytics Employee Attrition & Performance (Kaggle)  
@@ -123,4 +124,5 @@ python scripts/modeling.py
 
 
 4. View outputs & visualizations in output/output/ folder
+
 
